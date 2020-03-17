@@ -1,0 +1,14 @@
+[
+  {
+    "website": "https://www.microteckconsulting.com",
+    "logo": "data/assets/psf.png",
+    "type": "Ouro",
+    "name": "Microteck Consulting"
+  },
+  {
+    "website": "https://www.empyrealtech.com/",
+    "logo": "data/assets/stone.png",
+    "type": "Ouro",
+    "name": "Empyreal Consulting"
+  }
+]

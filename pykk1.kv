@@ -1,0 +1,80 @@
+#:import Toolbar kivymd.toolbar.Toolbar
+#:import MDNavigationDrawer kivymd.navigationdrawer.MDNavigationDrawer
+#:import NavigationLayout kivymd.navigationdrawer.NavigationLayout
+#:import NavigationDrawerToolbar kivymd.navigationdrawer.NavigationDrawerToolbar
+#:import MDTabbedPanel kivymd.tabs.MDTabbedPanel
+#:import MDTab kivymd.tabs.MDTab
+#:import MDList kivymd.list.MDList
+#:import MDSpinner kivymd.spinner.MDSpinner
+#:import ThreeLineListItem kivymd.list.ThreeLineListItem
+#:import ut utils
+#:import AboutsScreen screens
+#:import NlistingsScreen screens
+#:import SlistingsScreen screens
+#:import OlistingsScreen screens
+#:import AlertsScreen screens
+#:import ContactsScreen screens
+#:import SponsorsScreen screens
+#:import UpdatesScreen screens
+
+
+NavigationLayout:
+    id: nav_layout
+    MDNavigationDrawer:
+        id: nav_drawer
+        NavigationDrawerToolbar:
+            title: 'Menu'
+        NavigationDrawerIconButton:
+            icon: 'arrow-right-drop-circle'
+            text: 'About Us'
+            on_release: app.root.ids.scr_mngr.current = 'abouts'
+        NavigationDrawerIconButton:
+            icon: 'arrow-right-drop-circle'
+            text: 'North Mumbai Listings'
+            on_release: app.root.ids.scr_mngr.current = 'nlisting'
+        NavigationDrawerIconButton:
+            icon: 'arrow-right-drop-circle'
+            text: 'South Mumbai Listings'
+            on_release: app.root.ids.scr_mngr.current = 'slisting'
+        NavigationDrawerIconButton:
+            icon: 'arrow-right-drop-circle'
+            text: 'Other Mumbai Listings'
+            on_release: app.root.ids.scr_mngr.current = 'olisting'
+        NavigationDrawerIconButton:
+            icon: 'arrow-right-drop-circle'
+            text: 'Alerts'
+            on_release: app.root.ids.scr_mngr.current = 'alerts'
+        NavigationDrawerIconButton:
+            icon: 'arrow-right-drop-circle'
+            text: 'Contact Us'
+            on_release: app.root.ids.scr_mngr.current = 'connectus'
+        NavigationDrawerIconButton:
+            icon: 'arrow-right-drop-circle'
+            text: 'Sponsors'
+            on_release: app.root.ids.scr_mngr.current = 'sponsors'
+        NavigationDrawerIconButton:
+            icon: 'arrow-right-drop-circle'
+            text: 'Updates'
+            on_release: app.root.ids.scr_mngr.current = 'updates'
+
+
+
+    BoxLayout:
+        orientation: 'vertical'
+        Toolbar:
+            id: toolbar
+            title: 'Mumbai Real Estate Manager'
+            md_bg_color: app.theme_cls.primary_color
+            background_palette: 'Primary'
+            background_hue: '500'
+            left_action_items: [['menu', lambda x: app.root.toggle_nav_drawer()]]
+        ScreenManager:
+            id: scr_mngr
+            AboutsScreen:
+            NlistingScreen:
+            SlistingScreen:
+            OlistingScreen:
+            AlertsScreen:
+            ConnectusScreen:
+            SponsorsScreen:
+            UpdatesScreen:
